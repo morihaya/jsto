@@ -14,11 +14,11 @@ import (
 // utcCmd represents the utc command
 var utcCmd = &cobra.Command{
 	Use:   "utc",
-	Short: "show UTC time",
+	Short: "show UTC time (UTC+0, JST-9)",
 	Long: `Displays the time in UTC. This is -9 hours from Japan time.
 
 ex)
-'UTC' The time is:
+'UTC' time is:
  2022/04/22 13:12:45
 	`,
 	Run: func(cmd *cobra.Command, args []string) {
