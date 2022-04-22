@@ -6,6 +6,7 @@ package cmd
 
 import (
 	"fmt"
+	"time"
 
 	"github.com/spf13/cobra"
 )
@@ -13,15 +14,16 @@ import (
 // utcCmd represents the utc command
 var utcCmd = &cobra.Command{
 	Use:   "utc",
-	Short: "A brief description of your command",
-	Long: `A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:
+	Short: "show UTC time",
+	Long: `Displays the time in UTC. This is -9 hours from Japan time.
 
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+ex)
+'UTC' The time is:
+ 2022/04/22 13:12:45
+	`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("utc called")
+		t := time.Now().UTC()
+		fmt.Println("'UTC' The time is:\n", t.Format("2006/01/02 15:04:05"))
 	},
 }
 
