@@ -1,7 +1,11 @@
+/*
+Copyright © 2022 NAME HERE <EMAIL ADDRESS>
+
+*/
 package main
 
-import "fmt"
+import "github.com/morihaya/jsto/cmd"
 
 func main() {
-	fmt.Println("Hello, 世界")
+	cmd.Execute()
 }
