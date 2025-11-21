@@ -34,7 +34,11 @@ ex)
 		if err != nil {
 			panic(err)
 		}
-		fmt.Println("'EDT' time is (UTC-4, JST-13):\n", s)
+		if len(args) > 0 {
+			fmt.Printf("'EDT' time for JST %s is:\n %s\n", args[0], s)
+		} else {
+			fmt.Println("'EDT' time is (UTC-4, JST-13):\n", s)
+		}
 	},
 }
 

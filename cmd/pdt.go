@@ -34,7 +34,11 @@ ex)
 		if err != nil {
 			panic(err)
 		}
-		fmt.Println("'PDT' The time is:\n", s)
+		if len(args) > 0 {
+			fmt.Printf("'PDT' time for JST %s is:\n %s\n", args[0], s)
+		} else {
+			fmt.Println("'PDT' The time is:\n", s)
+		}
 	},
 }
 

@@ -34,7 +34,11 @@ ex)
 		if err != nil {
 			panic(err)
 		}
-		fmt.Println("'IST' time is (UTC+5:30, JST-3:30):\n", s)
+		if len(args) > 0 {
+			fmt.Printf("'IST' time for JST %s is:\n %s\n", args[0], s)
+		} else {
+			fmt.Println("'IST' time is (UTC+5:30, JST-3:30):\n", s)
+		}
 	},
 }
 
