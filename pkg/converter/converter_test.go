@@ -58,3 +58,52 @@ func TestConvert(t *testing.T) {
 		})
 	}
 }
+
+func TestConvertFromJST(t *testing.T) {
+	// Mocking time is tricky here because ConvertFromJST uses time.Now().
+	// For simplicity, we will just test that it doesn't return error for valid input
+	// and returns error for invalid input.
+	// A more robust test would require dependency injection for time.Now().
+
+	tests := []struct {
+		name           string
+		jstTimeStr     string
+		targetLocation string
+		wantErr        bool
+	}{
+		{
+			name:           "Valid Time UTC",
+			jstTimeStr:     "13:00",
+			targetLocation: "UTC",
+			wantErr:        false,
+		},
+		{
+			name:           "Valid Time EDT",
+			jstTimeStr:     "13:00",
+			targetLocation: "America/New_York",
+			wantErr:        false,
+		},
+		{
+			name:           "Invalid Time Format",
+			jstTimeStr:     "25:00",
+			targetLocation: "UTC",
+			wantErr:        true,
+		},
+		{
+			name:           "Invalid Location",
+			jstTimeStr:     "13:00",
+			targetLocation: "Invalid/Location",
+			wantErr:        true,
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			_, err := ConvertFromJST(tt.jstTimeStr, tt.targetLocation)
+			if (err != nil) != tt.wantErr {
+				t.Errorf("ConvertFromJST() error = %v, wantErr %v", err, tt.wantErr)
+				return
+			}
+		})
+	}
+}

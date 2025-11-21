@@ -23,8 +23,14 @@ ex)
  2022/04/22 13:12:45
 	`,
 	Run: func(cmd *cobra.Command, args []string) {
-		t := time.Now()
-		s, err := converter.Convert(t, "UTC")
+		var s string
+		var err error
+		if len(args) > 0 {
+			s, err = converter.ConvertFromJST(args[0], "UTC")
+		} else {
+			t := time.Now()
+			s, err = converter.Convert(t, "UTC")
+		}
 		if err != nil {
 			panic(err)
 		}
