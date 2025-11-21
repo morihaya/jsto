@@ -2,9 +2,9 @@
 
 [![Test](https://github.com/morihaya/jsto/actions/workflows/test.yml/badge.svg)](https://github.com/morihaya/jsto/actions/workflows/test.yml)
 
-[English](README.md) | [日本語](README.ja.md)
+日本標準時(JST)から各国の時間へ変換して表示します
 
-Display the time in each country from Japan Standard Time JST
+[English](README.md) | [日本語](README.ja.md)
 
 ```bash
 Usage:
@@ -27,45 +27,45 @@ Flags:
 Use "jsto [command] --help" for more information about a command.
 ```
 
-output
+出力例
 ```
 'UTC' The time is:
  2022/04/22 13:15:02
 ```
 
-You can also specify a time in JST to convert:
+JSTの時間を指定して変換することも可能です:
 
 ```bash
 jsto utc 12:30
 ```
 
-output
+出力例
 ```
 'UTC' time for JST 12:30 is:
  2025/11/21 03:30:00
 ```
 
-## Testing
+## テスト
 
-To run the unit tests, execute the following command:
+単体テストを実行するには、以下のコマンドを実行してください:
 
 ```bash
 go test -v ./...
 ```
 
-## Build
+## ビルド
 
-### Local Build
+### ローカルビルド
 
-To build the application locally:
+ローカルでアプリケーションをビルドするには:
 
 ```bash
 go build -o jsto .
 ```
 
-### Docker Build
+### Dockerビルド
 
-To build the Docker image:
+Dockerイメージをビルドするには:
 
 ```bash
 docker build -t jsto .
