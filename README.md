@@ -33,3 +33,21 @@ To run the unit tests, execute the following command:
 ```bash
 go test -v ./...
 ```
+
+## Build
+
+### Local Build
+
+To build the application locally:
+
+```bash
+go build -o jsto .
+```
+
+### Docker Build
+
+To build the Docker image:
+
+```bash
+docker build -t jsto .
+```
