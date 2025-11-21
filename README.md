@@ -29,6 +29,18 @@ output
  2022/04/22 13:15:02
 ```
 
+You can also specify a time in JST to convert:
+
+```bash
+jsto utc 12:30
+```
+
+output
+```
+'UTC' time for JST 12:30 is:
+ 2025/11/21 03:30:00
+```
+
 ## Testing
 
 To run the unit tests, execute the following command:

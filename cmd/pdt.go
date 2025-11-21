@@ -21,6 +21,9 @@ var pstCmd = &cobra.Command{
 ex)
 'PDT' time is:
  2022/04/22 13:12:45
+
+You can also specify a time in JST to convert:
+$ jsto pdt 12:30
 	`,
 	Run: func(cmd *cobra.Command, args []string) {
 		var s string

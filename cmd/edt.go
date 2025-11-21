@@ -21,6 +21,9 @@ var estCmd = &cobra.Command{
 ex)
 'EDT' time is:
  2022/04/22 13:12:45
+
+You can also specify a time in JST to convert:
+$ jsto edt 12:30
 	`,
 	Run: func(cmd *cobra.Command, args []string) {
 		var s string
