@@ -1,4 +1,7 @@
 # jsto
+
+[![Test](https://github.com/morihaya/jsto/actions/workflows/test.yml/badge.svg)](https://github.com/morihaya/jsto/actions/workflows/test.yml)
+
 Display the time in each country from Japan Standard Time JST
 
 ```bash
