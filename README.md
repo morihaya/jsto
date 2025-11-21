@@ -10,7 +10,9 @@ Usage:
 
 Available Commands:
   completion  Generate the autocompletion script for the specified shell
+  cst         show CST time (UTC+8, JST-1)
   edt         show EDT time (UTC-4, JST-13)
+  gmt         show GMT/BST time (UTC+0/+1, JST-9/-8)
   help        Help about any command
   ist         show IST time (UTC+5:30, JST-3:30)
   pdt         show PDT time (UTC-7, JST-15)
