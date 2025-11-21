@@ -9,6 +9,7 @@ import (
 	"time"
 
 	"github.com/spf13/cobra"
+	"github.com/morihaya/jsto/pkg/converter"
 )
 
 // istCmd represents the ist command
@@ -22,12 +23,12 @@ ex)
  2022/04/22 13:12:45
 	`,
 	Run: func(cmd *cobra.Command, args []string) {
-		loc, err := time.LoadLocation("Asia/Kolkata")
+		t := time.Now()
+		s, err := converter.Convert(t, "Asia/Kolkata")
 		if err != nil {
 			panic(err)
 		}
-		t := time.Now().In(loc)
-		fmt.Println("'IST' time is (UTC+5:30, JST-3:30):\n", t.Format("2006/01/02 15:04:05"))
+		fmt.Println("'IST' time is (UTC+5:30, JST-3:30):\n", s)
 	},
 }
 

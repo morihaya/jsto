@@ -9,6 +9,7 @@ import (
 	"time"
 
 	"github.com/spf13/cobra"
+	"github.com/morihaya/jsto/pkg/converter"
 )
 
 // estCmd represents the edt command
@@ -22,12 +23,12 @@ ex)
  2022/04/22 13:12:45
 	`,
 	Run: func(cmd *cobra.Command, args []string) {
-		loc, err := time.LoadLocation("America/New_York")
+		t := time.Now()
+		s, err := converter.Convert(t, "America/New_York")
 		if err != nil {
 			panic(err)
 		}
-		t := time.Now().In(loc)
-		fmt.Println("'EDT' time is (UTC-4, JST-13):\n", t.Format("2006/01/02 15:04:05"))
+		fmt.Println("'EDT' time is (UTC-4, JST-13):\n", s)
 	},
 }
 

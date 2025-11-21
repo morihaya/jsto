@@ -9,6 +9,7 @@ import (
 	"time"
 
 	"github.com/spf13/cobra"
+	"github.com/morihaya/jsto/pkg/converter"
 )
 
 // utcCmd represents the utc command
@@ -22,8 +23,12 @@ ex)
  2022/04/22 13:12:45
 	`,
 	Run: func(cmd *cobra.Command, args []string) {
-		t := time.Now().UTC()
-		fmt.Println("'UTC' The time is:\n", t.Format("2006/01/02 15:04:05"))
+		t := time.Now()
+		s, err := converter.Convert(t, "UTC")
+		if err != nil {
+			panic(err)
+		}
+		fmt.Println("'UTC' The time is:\n", s)
 	},
 }
 

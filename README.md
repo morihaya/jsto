@@ -25,3 +25,11 @@ output
 'UTC' The time is:
  2022/04/22 13:15:02
 ```
+
+## Testing
+
+To run the unit tests, execute the following command:
+
+```bash
+go test -v ./...
+```
